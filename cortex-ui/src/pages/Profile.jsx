@@ -5,7 +5,7 @@ import SearchableSelect from '../components/SearchableSelect';
 import './Profile.css';
 
 const Profile = () => {
-    const { user, logout } = useAuth();
+    const { user, setUser, logout } = useAuth();
     const navigate = useNavigate();
 
     const [orders, setOrders] = useState([]);
@@ -16,8 +16,13 @@ const Profile = () => {
     const [expandedOrderId, setExpandedOrderId] = useState(null);
 
     // Edit states
+    const [isEditingContact, setIsEditingContact] = useState(false);
     const [isEditingAddress, setIsEditingAddress] = useState(false);
     const [isEditingPayment, setIsEditingPayment] = useState(false);
+
+    const [contactForm, setContactForm] = useState({
+        email: '', mobile: ''
+    });
 
     const [addressForm, setAddressForm] = useState({
         name: '', email: '', phone: '', line1: '', line2: '', city: '', state: '', pincode: '', country: 'India'
@@ -57,6 +62,7 @@ const Profile = () => {
             navigate('/login');
             return;
         }
+        setContactForm({ email: user.email || '', mobile: user.mobile || '' });
         fetchProfileData();
     }, [user, navigate]);
 
@@ -156,6 +162,43 @@ const Profile = () => {
 
     const toggleOrder = (orderId) => {
         setExpandedOrderId(prev => prev === orderId ? null : orderId);
+    };
+
+    const handleSaveContact = async () => {
+        if (!/^\d{10}$/.test(contactForm.mobile)) {
+            alert("Mobile number must be exactly 10 digits.");
+            return;
+        }
+        if (!contactForm.email || !contactForm.email.includes('@')) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        const token = localStorage.getItem('token');
+        try {
+            const res = await fetch('/api/auth/update-contact', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+                body: JSON.stringify(contactForm)
+            });
+            const data = await res.json();
+            if (res.ok) {
+                setUser(data.user);
+                setIsEditingContact(false);
+                alert("Contact information updated successfully.");
+            } else {
+                if (res.status === 401) {
+                    alert('Session expired. Please log in again.');
+                    logout();
+                    navigate('/login');
+                } else {
+                    alert(data.error || 'Failed to update contact information.');
+                }
+            }
+        } catch (e) {
+            console.error("Error updating contact:", e);
+            alert("An error occurred. Please try again.");
+        }
     };
 
     const handleSaveAddress = async () => {
@@ -407,6 +450,48 @@ const Profile = () => {
                 <div className="profile-section">
                     <h2 className="section-title">Account Settings</h2>
                     <div className="settings-grid">
+
+                        {/* Contact Information Setting */}
+                        <div className="setting-item">
+                            <div className="setting-header">
+                                <h3>Contact Information</h3>
+                                {!isEditingContact && (
+                                    <button className="btn-edit" onClick={() => setIsEditingContact(true)}>
+                                        Edit
+                                    </button>
+                                )}
+                            </div>
+
+                            {isEditingContact ? (
+                                <div className="setting-form">
+                                    <input
+                                        type="email"
+                                        placeholder="Email Address *"
+                                        value={contactForm.email}
+                                        onChange={e => setContactForm({ ...contactForm, email: e.target.value })}
+                                    />
+                                    <input
+                                        type="tel"
+                                        placeholder="Mobile Number (10 digits) *"
+                                        maxLength="10"
+                                        value={contactForm.mobile}
+                                        onChange={e => setContactForm({ ...contactForm, mobile: e.target.value.replace(/\D/g, '') })}
+                                    />
+                                    <div className="form-actions">
+                                        <button className="btn-cancel" onClick={() => {
+                                            setIsEditingContact(false);
+                                            setContactForm({ email: user.email || '', mobile: user.mobile || '' });
+                                        }}>Cancel</button>
+                                        <button className="btn-save" onClick={handleSaveContact}>Save</button>
+                                    </div>
+                                </div>
+                            ) : (
+                                <p>
+                                    <strong>Email:</strong> {user.email}<br />
+                                    <strong>Mobile:</strong> {user.mobile || 'Not set'}
+                                </p>
+                            )}
+                        </div>
 
                         {/* Shipping Address Setting */}
                         <div className="setting-item">

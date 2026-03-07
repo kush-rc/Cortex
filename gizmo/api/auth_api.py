@@ -3,6 +3,7 @@ from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identi
 from flask_bcrypt import Bcrypt
 from pymongo import MongoClient
 import os
+import re
 from datetime import datetime
 
 auth_bp = Blueprint('auth', __name__)
@@ -20,6 +21,7 @@ def serialize_user(user):
         "id": str(user["_id"]),
         "username": user["username"],
         "email": user["email"],
+        "mobile": user.get("mobile", ""),
         "cart": user.get("cart", [])
     }
 
@@ -33,6 +35,9 @@ def signup():
 
     if not username or not email or not mobile or not password:
         return jsonify({"error": "Missing definition"}), 400
+
+    if not re.match(r"^\d{10}$", mobile):
+        return jsonify({"error": "Mobile number must be exactly 10 digits"}), 400
 
     if users_collection.find_one({"email": email}):
         return jsonify({"error": "Email already registered"}), 409
@@ -103,6 +108,51 @@ def logout():
     unset_jwt_cookies(response)
     # Front-end should delete the token from local storage
     return response, 200
+
+@auth_bp.route('/update-contact', methods=['PUT'])
+@jwt_required()
+def update_contact():
+    data = request.get_json()
+    new_email = data.get('email')
+    new_mobile = data.get('mobile')
+    
+    if not new_email and not new_mobile:
+        return jsonify({"error": "Nothing to update"}), 400
+        
+    current_user_id = get_jwt_identity()
+    from bson.objectid import ObjectId
+    
+    # Check for conflicts
+    conflict_query = {"_id": {"$ne": ObjectId(current_user_id)}, "$or": []}
+    if new_email:
+        conflict_query["$or"].append({"email": new_email})
+    if new_mobile:
+        if not re.match(r"^\d{10}$", new_mobile):
+            return jsonify({"error": "Mobile number must be exactly 10 digits"}), 400
+        conflict_query["$or"].append({"mobile": new_mobile})
+        
+    if conflict_query["$or"]:
+        conflict = users_collection.find_one(conflict_query)
+        if conflict:
+            if new_email and conflict.get("email") == new_email:
+                return jsonify({"error": "Email already registered to another account"}), 409
+            if new_mobile and conflict.get("mobile") == new_mobile:
+                return jsonify({"error": "Mobile number already registered to another account"}), 409
+
+    update_fields = {}
+    if new_email: update_fields["email"] = new_email
+    if new_mobile: update_fields["mobile"] = new_mobile
+    
+    users_collection.update_one(
+        {"_id": ObjectId(current_user_id)},
+        {"$set": update_fields}
+    )
+    
+    updated_user = users_collection.find_one({"_id": ObjectId(current_user_id)})
+    return jsonify({
+        "message": "Contact information updated successfully",
+        "user": serialize_user(updated_user)
+    }), 200
 
 @auth_bp.route('/reset-password', methods=['POST'])
 def reset_password():
