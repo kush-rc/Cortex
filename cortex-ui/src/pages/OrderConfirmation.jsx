@@ -23,7 +23,7 @@ const OrderConfirmation = () => {
         if (!token) return
 
         try {
-            const res = await fetch(`/api/orders/${orderId}`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/${orderId}`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             })
             if (res.ok) {

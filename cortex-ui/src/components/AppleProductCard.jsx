@@ -51,7 +51,7 @@ const AppleProductCard = ({ product }) => {
     return (
         <div className={`apple-product-card ${inCompare ? 'apple-product-card--in-compare' : ''}`}>
             <div className="apple-card-image-wrapper">
-                <img src={product.image || '/static/placeholder.png'} alt={product.name} className="apple-card-image" />
+                <img src={product.image || `${import.meta.env.VITE_API_URL || ""}/static/placeholder.png`} alt={product.name} className="apple-card-image" />
             </div>
 
             <div className="apple-card-swatches">

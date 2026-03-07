@@ -49,7 +49,7 @@ const Checkout = () => {
         const token = localStorage.getItem('token')
         if (!token) return
         try {
-            const res = await fetch('/api/orders/address', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/address`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             })
             if (res.ok) {
@@ -92,7 +92,7 @@ const Checkout = () => {
         }
 
         try {
-            const res = await fetch('/api/orders/checkout', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/checkout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

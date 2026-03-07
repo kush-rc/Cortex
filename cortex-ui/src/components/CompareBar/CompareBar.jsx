@@ -22,7 +22,7 @@ export default function CompareBar() {
                 {compareList.map(p => (
                     <div key={p.id || p._id} className="compare-bar__item">
                         <img
-                            src={p.image || '/static/placeholder.png'}
+                            src={p.image || `${import.meta.env.VITE_API_URL || ""}/static/placeholder.png`}
                             alt={p.name}
                             className="compare-bar__img"
                         />

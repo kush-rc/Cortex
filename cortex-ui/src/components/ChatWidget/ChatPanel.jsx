@@ -33,7 +33,7 @@ const ChatPanel = ({ isOpen, onClose, initialMessage, productContext }) => {
         if (isOpen && user && !historyLoaded) {
             const token = localStorage.getItem('token');
             if (token) {
-                fetch('/api/chat/history', {
+                fetch(`${import.meta.env.VITE_API_URL || ""}/api/chat/history`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 })
                     .then(res => res.ok ? res.json() : null)
@@ -76,7 +76,7 @@ const ChatPanel = ({ isOpen, onClose, initialMessage, productContext }) => {
         const token = localStorage.getItem('token');
         if (token) {
             try {
-                await fetch('/api/chat/history', {
+                await fetch(`${import.meta.env.VITE_API_URL || ""}/api/chat/history`, {
                     method: 'DELETE',
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
@@ -120,7 +120,7 @@ const ChatPanel = ({ isOpen, onClose, initialMessage, productContext }) => {
             const token = localStorage.getItem('token');
             if (token) headers['Authorization'] = `Bearer ${token}`;
 
-            const response = await fetch('/api/chat', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/chat`, {
                 method: 'POST',
                 headers,
                 body: JSON.stringify({
@@ -266,7 +266,7 @@ const ChatPanel = ({ isOpen, onClose, initialMessage, productContext }) => {
                                             const handleAutoCompare = async () => {
                                                 clearCompare();
                                                 try {
-                                                    const res = await fetch(`/api/products/compare?ids=${ids.join(',')}`);
+                                                    const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/products/compare?ids=${ids.join(',')}`);
                                                     const data = await res.json();
                                                     if (data.success && data.products) {
                                                         data.products.forEach(p => addToCompare(p));
@@ -307,7 +307,7 @@ const ChatPanel = ({ isOpen, onClose, initialMessage, productContext }) => {
 
                                             const handleLearnMore = async () => {
                                                 try {
-                                                    const res = await fetch(`/api/products/compare?ids=${encodeURIComponent(productName.trim())}`);
+                                                    const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/products/compare?ids=${encodeURIComponent(productName.trim())}`);
                                                     const data = await res.json();
                                                     if (data.success && data.products?.length > 0) {
                                                         const p = data.products[0];

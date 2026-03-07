@@ -14,7 +14,7 @@ const Home = () => {
                 secondaryLink="/iphone"
                 theme="light"
                 size="large"
-                bgImage="/static/product_images/apple_home/hero_iphone_family__fuz5j2v5xx6y_medium.jpg"
+                bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/hero_iphone_family__fuz5j2v5xx6y_medium.jpg`
                 imageStyle={{ width: '100%', height: '100%', objectPosition: 'center bottom' }}
             />
 
@@ -30,7 +30,7 @@ const Home = () => {
                 secondaryLink="/product/Apple%20Watch%20Series%2011"
                 theme="light"
                 size="large"
-                bgImage="/static/product_images/apple_home/hero_apple_watch_series_11__bdz1mml4dx6q_medium.jpg"
+                bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/hero_apple_watch_series_11__bdz1mml4dx6q_medium.jpg`
                 imageStyle={{ width: '100%', height: '100%', objectPosition: 'center bottom' }}
             />
             {/* Note: Screenshot showed White BG for Series 11? Or Light gray. 
@@ -51,7 +51,7 @@ const Home = () => {
                     secondaryLink="/product/Apple%20Watch%20Ultra%203"
                     theme="dark"
                     size="medium"
-                    bgImage="/static/product_images/apple_home/promo_apple_watch_ultra3__bwvslhbxx99e_medium.jpg"
+                    bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/promo_apple_watch_ultra3__bwvslhbxx99e_medium.jpg`
                     imageStyle={{ width: '100%', height: '100%', objectPosition: 'center bottom' }}
                 />
 
@@ -65,7 +65,7 @@ const Home = () => {
                     secondaryLink="/product/iPad%20Air"
                     theme="light"
                     size="medium"
-                    bgImage="/static/product_images/apple_home/ipad_l.jpg"
+                    bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/ipad_l.jpg`
                     imageStyle={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom' }}
                 />
 
@@ -79,7 +79,7 @@ const Home = () => {
                     secondaryLink="/product/MacBook%20Pro%2014%22%20and%2016%22"
                     theme="dark"
                     size="medium"
-                    bgImage="/static/product_images/apple_home/promo_macbook_pro_m5__gnwzdhijhm6a_medium.jpg"
+                    bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/promo_macbook_pro_m5__gnwzdhijhm6a_medium.jpg`
                     imageStyle={{ width: '100%', height: '100%', objectPosition: 'center bottom' }}
                 />
 
@@ -93,7 +93,7 @@ const Home = () => {
                     secondaryLink="/product/AirPods%20Pro%203"
                     theme="light"
                     size="medium"
-                    bgImage="/static/product_images/apple_home/promo_airpodspro_3__f6xmza7bglei_medium.jpg"
+                    bgImage=`${import.meta.env.VITE_API_URL || ""}/static/product_images/apple_home/promo_airpodspro_3__f6xmza7bglei_medium.jpg`
                     imageStyle={{ width: '100%', height: '100%', objectPosition: 'center bottom' }}
                 />
             </div>

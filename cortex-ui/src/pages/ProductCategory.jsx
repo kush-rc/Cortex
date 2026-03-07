@@ -31,7 +31,7 @@ const ProductCategory = ({ category }) => {
         setLoading(true)
         try {
             // Use relative path for Vite proxy
-            const response = await fetch(`/api/products?category=${category}`)
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/products?category=${category}`)
             const data = await response.json()
             setProducts(data.products || [])
         } catch (error) {

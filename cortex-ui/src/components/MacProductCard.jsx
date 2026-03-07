@@ -17,7 +17,7 @@ const MacProductCard = ({ product }) => {
             // Exact image path from file system check found: 'mac13&15_1.jpg' in 'Macbook Air 13'' and 15'''
             // URL Encode: ' ' -> %20, '&' -> %26, '' -> %27%27? Or literal.
             // Let's try literal first, but most servers need %20.
-            imageOverride: '/static/product_images/Mac/Macbook%20Air%2013%27%27%20and%2015%27%27/mac13%2615_1.jpg',
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macbook%20Air%2013%27%27%20and%2015%27%27/mac13%2615_1.jpg`,
             colors: ['#2e3642', '#f0e5d3', '#7d7e80', '#e3e4e6']
         };
 
@@ -28,7 +28,7 @@ const MacProductCard = ({ product }) => {
             desc: 'The most advanced Mac laptops for demanding workflows.',
             price: 'From ₹169900.00***',
             emi: 'or ₹26650.00/mo. for 6 mo.****',
-            imageOverride: '/static/product_images/Mac/MacBook%20Pro/macpro_1.webp',
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/MacBook%20Pro/macpro_1.webp`,
             colors: ['#000000', '#e3e4e6'] // Space Black, Silver (User screenshot has 2 dots? Or 3. Let's do 2-3)
         };
 
@@ -39,7 +39,7 @@ const MacProductCard = ({ product }) => {
             desc: 'A stunning all-in-one desktop for creativity and productivity.',
             price: 'From ₹134900.00***',
             emi: 'or ₹21650.00/mo. for 6 mo.****',
-            imageOverride: '/static/product_images/Mac/imac/imac_1.jpg',
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/imac/imac_1.jpg`,
             colors: ['#355678', '#668770', '#E5A599', '#E6E7E9', '#E9E684', '#E1894D', '#9A80BD']
         };
 
@@ -50,7 +50,7 @@ const MacProductCard = ({ product }) => {
             desc: 'The mini-est, most affordable Mac with mighty performance.',
             price: 'From ₹59900.00***',
             emi: 'or ₹9317.00/mo. for 6 mo.****',
-            imageOverride: '/static/product_images/Mac/Macmini/macmini_1.jpg',
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macmini/macmini_1.jpg`,
             colors: ['#e3e4e6'] // Silver
         };
 
@@ -61,7 +61,7 @@ const MacProductCard = ({ product }) => {
             desc: 'Powerful performance and extensive connectivity for pro workflows.',
             price: 'From ₹214900.00***',
             emi: 'or ₹34150.00/mo. for 6 mo.****',
-            imageOverride: '/static/product_images/Mac/Macstudio/macs_1.jpg', // macs_1.jpg
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macstudio/macs_1.jpg`, // macs_1.jpg
             colors: ['#e3e4e6']
         };
 
@@ -72,7 +72,7 @@ const MacProductCard = ({ product }) => {
             desc: 'A pro workstation with PCIe expansion for demanding workflows.',
             price: 'From ₹729900.00***',
             emi: 'or ₹112700.00/mo. for 6 mo.****',
-            imageOverride: '/static/product_images/Mac/Macpro/macpro_1.jpg',
+            imageOverride: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macpro/macpro_1.jpg`,
             colors: ['#e3e4e6']
         };
 

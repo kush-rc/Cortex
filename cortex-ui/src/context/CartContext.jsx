@@ -23,7 +23,7 @@ export const CartProvider = ({ children }) => {
 
         setLoading(true);
         try {
-            const response = await fetch('/api/cart/', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/cart/`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (response.ok) {
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             const productId = product.id || product._id || product.name;
-            const response = await fetch('/api/cart/add', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/cart/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ export const CartProvider = ({ children }) => {
         if (!token) return;
 
         try {
-            const response = await fetch('/api/cart/update', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/cart/update`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = async (productId) => {
         const token = localStorage.getItem('token');
         try {
-            const response = await fetch('/api/cart/remove', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/cart/remove`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

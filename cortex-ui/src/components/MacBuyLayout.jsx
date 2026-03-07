@@ -125,7 +125,7 @@ const MacBuyLayout = ({ product }) => {
                 memory: selectedMemory,
                 storage: selectedStorage
             },
-            image: `/static/product_images/Mac/Macbook_Air_13''_and_15''/${selectedColor.img}`
+            image: `${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macbook_Air_13''_and_15''/${selectedColor.img}`
         }
 
         const success = await addToCart(configuration, 1)
@@ -221,7 +221,7 @@ const MacBuyLayout = ({ product }) => {
                     <div className="rf-bfe-gallery-container">
                         <div className="rf-bfe-gallery">
                             <img
-                                src={`/static/product_images/Mac/Macbook_Air_13''_and_15''/${currentImages[currentImageIndex]}`}
+                                src={`${import.meta.env.VITE_API_URL || ""}/static/product_images/Mac/Macbook_Air_13''_and_15''/${currentImages[currentImageIndex]}`}
                                 alt={`MacBook Air ${selectedColor.name}`}
                                 className="rf-bfe-gallery-image"
                             />

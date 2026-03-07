@@ -72,7 +72,7 @@ const Profile = () => {
 
         try {
             // Fetch Orders
-            const ordersRes = await fetch('/api/orders/', {
+            const ordersRes = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (ordersRes.ok) {
@@ -81,7 +81,7 @@ const Profile = () => {
             }
 
             // Fetch Tickets
-            const ticketsRes = await fetch('/api/orders/tickets', {
+            const ticketsRes = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/tickets`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (ticketsRes.ok) {
@@ -90,7 +90,7 @@ const Profile = () => {
             }
 
             // Fetch Saved Address
-            const addressRes = await fetch('/api/orders/address', {
+            const addressRes = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/address`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (addressRes.ok) {
@@ -102,7 +102,7 @@ const Profile = () => {
             }
 
             // Fetch Saved Payment
-            const paymentRes = await fetch('/api/orders/payment', {
+            const paymentRes = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/payment`, {
                 headers: { 'Authorization': `Bearer ${token}` }
             });
             if (paymentRes.ok) {
@@ -132,7 +132,7 @@ const Profile = () => {
 
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch(`/api/orders/${orderId}/action`, {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/${orderId}/action`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `Bearer ${token}`,
@@ -176,7 +176,7 @@ const Profile = () => {
 
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch('/api/auth/update-contact', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/auth/update-contact`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(contactForm)
@@ -218,7 +218,7 @@ const Profile = () => {
 
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch('/api/orders/address', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/address`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(addressForm)
@@ -244,7 +244,7 @@ const Profile = () => {
     const handleSavePayment = async () => {
         const token = localStorage.getItem('token');
         try {
-            const res = await fetch('/api/orders/payment', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/orders/payment`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(paymentForm)

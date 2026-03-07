@@ -74,7 +74,7 @@ export default function ComparePage() {
             return
         }
         setLoading(true)
-        fetch(`/api/products/compare?ids=${ids}`)
+        fetch(`${import.meta.env.VITE_API_URL || ""}/api/products/compare?ids=${ids}`)
             .then(r => r.json())
             .then(data => {
                 if (data.success) setProducts(data.products)
@@ -88,7 +88,7 @@ export default function ComparePage() {
     useEffect(() => {
         const cat = compareCategory || selectedCategory
         if (!cat) return
-        fetch(`/api/products?category=${cat}`)
+        fetch(`${import.meta.env.VITE_API_URL || ""}/api/products?category=${cat}`)
             .then(r => r.json())
             .then(data => setCategoryProducts(data.products || []))
             .catch(() => { })
@@ -172,7 +172,7 @@ export default function ComparePage() {
                                     <div className="compare-product-header">
                                         <div className="compare-product-img-wrap">
                                             <img
-                                                src={product.image || '/static/placeholder.png'}
+                                                src={product.image || `${import.meta.env.VITE_API_URL || ""}/static/placeholder.png`}
                                                 alt={product.name}
                                                 className="compare-product-img"
                                             />

@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
     const fetchUser = async (authToken) => {
         try {
-            const response = await fetch('/api/auth/me', {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/auth/me`, {
                 headers: {
                     'Authorization': `Bearer ${authToken}`
                 }
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const login = async (email, password) => {
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/auth/login`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     const signup = async (username, email, mobile, password) => {
-        const response = await fetch('/api/auth/signup', {
+        const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/auth/signup`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, email, mobile, password })
