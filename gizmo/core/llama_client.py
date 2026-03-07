@@ -140,12 +140,64 @@ class LlamaClient:
         return self.llm is not None
 
 
+import requests
+
+class GroqClient:
+    """Groq API client as a drop-in replacement for local LlamaClient."""
+
+    def __init__(self):
+        self.api_key = os.getenv("GROQ_API_KEY")
+        self.model = "llama-3.2-3b-preview"
+        self.base_url = "https://api.groq.com/openai/v1/chat/completions"
+
+    def generate(self, prompt: str, system: str = None, max_tokens: int = 512, history: list = None) -> str:
+        messages = []
+        if system:
+            messages.append({"role": "system", "content": system})
+        if history:
+            for msg in history:
+                if isinstance(msg, dict) and "role" in msg and "content" in msg:
+                    messages.append({"role": msg["role"], "content": msg["content"]})
+        messages.append({"role": "user", "content": prompt})
+
+        response = requests.post(
+            self.base_url,
+            headers={
+                "Authorization": f"Bearer {self.api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": self.model,
+                "messages": messages,
+                "max_tokens": max_tokens,
+                "temperature": 0.1
+            },
+            timeout=30
+        )
+        
+        if response.status_code != 200:
+            print(f"❌ Groq API error: {response.text}")
+            return "I can only help with Cortex product questions. What would you like to know?"
+            
+        data = response.json()
+        return data["choices"][0]["message"]["content"]
+
+    def load(self):
+        pass
+
+    def is_loaded(self) -> bool:
+        return bool(self.api_key)
+
 # Singleton instance
 _client = None
 
-def get_llama_client(model_path: str = None) -> LlamaClient:
-    """Get or create the Llama client singleton."""
+def get_llama_client(model_path: str = None):
+    """Get or create the client singleton (either Groq or Llama depending on env)."""
     global _client
     if _client is None:
-        _client = LlamaClient(model_path)
+        use_groq = os.getenv("USE_GROQ", "false").lower() == "true"
+        if use_groq:
+            _client = GroqClient()
+        else:
+            _client = LlamaClient(model_path)
     return _client
