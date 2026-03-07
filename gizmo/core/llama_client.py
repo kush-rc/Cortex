@@ -147,7 +147,7 @@ class GroqClient:
 
     def __init__(self):
         self.api_key = os.getenv("GROQ_API_KEY")
-        self.model = "llama-3.2-3b-preview"
+        self.model = "llama3-8b-8192"
         self.base_url = "https://api.groq.com/openai/v1/chat/completions"
 
     def generate(self, prompt: str, system: str = None, max_tokens: int = 512, history: list = None) -> str:
