@@ -65,12 +65,12 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_6.jpg"
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_1.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_2.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_3.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_4.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_5.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_6.jpg"
         ]
     },
     {
@@ -111,12 +111,12 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_17_pro/iphone17pro_6.jpg"
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_1.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_2.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_3.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_4.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_5.jpg",
+            "/static/product_images/iphone/iphone_17_pro/iphone17pro_6.jpg"
         ]
     },
     {
@@ -156,12 +156,12 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone_air/iphoneair_6.jpg"
+            "/static/product_images/iphone/iphone_air/iphoneair_1.jpg",
+            "/static/product_images/iphone/iphone_air/iphoneair_2.jpg",
+            "/static/product_images/iphone/iphone_air/iphoneair_3.jpg",
+            "/static/product_images/iphone/iphone_air/iphoneair_4.jpg",
+            "/static/product_images/iphone/iphone_air/iphoneair_5.jpg",
+            "/static/product_images/iphone/iphone_air/iphoneair_6.jpg"
         ]
     },
     {
@@ -200,13 +200,13 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_6.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone17/iphone17_7.jpg"
+            "/static/product_images/iphone/iphone17/iphone17_1.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_2.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_3.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_4.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_5.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_6.jpg",
+            "/static/product_images/iphone/iphone17/iphone17_7.jpg"
         ]
     },
     {
@@ -261,14 +261,14 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_6.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_7.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_8.jpg"
+            "/static/product_images/iphone/iphone16/iphone16_1.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_2.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_3.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_4.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_5.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_6.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_7.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_8.jpg"
         ]
     },
     {
@@ -307,14 +307,14 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_4.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_5.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_6.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_7.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16/iphone16_8.jpg"
+            "/static/product_images/iphone/iphone16/iphone16_1.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_2.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_3.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_4.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_5.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_6.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_7.jpg",
+            "/static/product_images/iphone/iphone16/iphone16_8.jpg"
         ]
     },
     {
@@ -352,10 +352,10 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/iphone/iphone16e/iphone16e_1.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16e/iphone16e_2.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16e/iphone16e_3.jpg",
-            "http://localhost:5000/static/product_images/iphone/iphone16e/iphone16e_4.jpg"
+            "/static/product_images/iphone/iphone16e/iphone16e_1.jpg",
+            "/static/product_images/iphone/iphone16e/iphone16e_2.jpg",
+            "/static/product_images/iphone/iphone16e/iphone16e_3.jpg",
+            "/static/product_images/iphone/iphone16e/iphone16e_4.jpg"
         ]
     },
     {
@@ -426,12 +426,12 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_2.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_3.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_4.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_5.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_6.jpg"
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_1.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_2.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_3.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_4.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_5.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_6.jpg"
         ]
     },
     {
@@ -521,10 +521,10 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_1.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_2.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_3.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_7.webp"
+            "/static/product_images/Mac/MacBook_Pro/macpro_1.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_2.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_3.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_7.webp"
         ]
     },
     {
@@ -598,16 +598,16 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/imac/imac_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_2.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_3.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_4.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_5.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_6.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_7.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_8.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_9.webp",
-            "http://localhost:5000/static/product_images/Mac/imac/imac_h.jpg"
+            "/static/product_images/Mac/imac/imac_1.jpg",
+            "/static/product_images/Mac/imac/imac_2.webp",
+            "/static/product_images/Mac/imac/imac_3.webp",
+            "/static/product_images/Mac/imac/imac_4.webp",
+            "/static/product_images/Mac/imac/imac_5.webp",
+            "/static/product_images/Mac/imac/imac_6.webp",
+            "/static/product_images/Mac/imac/imac_7.webp",
+            "/static/product_images/Mac/imac/imac_8.webp",
+            "/static/product_images/Mac/imac/imac_9.webp",
+            "/static/product_images/Mac/imac/imac_h.jpg"
         ]
     },
     {
@@ -681,12 +681,12 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_2.webp",
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_3.webp",
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_4.webp",
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_5.webp",
-            "http://localhost:5000/static/product_images/Mac/Macmini/macmini_h.jpg"
+            "/static/product_images/Mac/Macmini/macmini_1.jpg",
+            "/static/product_images/Mac/Macmini/macmini_2.webp",
+            "/static/product_images/Mac/Macmini/macmini_3.webp",
+            "/static/product_images/Mac/Macmini/macmini_4.webp",
+            "/static/product_images/Mac/Macmini/macmini_5.webp",
+            "/static/product_images/Mac/Macmini/macmini_h.jpg"
         ]
     },
     {
@@ -760,13 +760,13 @@ products = [
         "featured": True,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_2.webp",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_3.webp",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_4.webp",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_5.webp",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_6.webp",
-            "http://localhost:5000/static/product_images/Mac/Macstudio/macs_h.jpg"
+            "/static/product_images/Mac/Macstudio/macs_1.jpg",
+            "/static/product_images/Mac/Macstudio/macs_2.webp",
+            "/static/product_images/Mac/Macstudio/macs_3.webp",
+            "/static/product_images/Mac/Macstudio/macs_4.webp",
+            "/static/product_images/Mac/Macstudio/macs_5.webp",
+            "/static/product_images/Mac/Macstudio/macs_6.webp",
+            "/static/product_images/Mac/Macstudio/macs_h.jpg"
         ]
     },
     {
@@ -835,11 +835,11 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/Macpro/macpro_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macpro/macpro_2.webp",
-            "http://localhost:5000/static/product_images/Mac/Macpro/macpro_3.webp",
-            "http://localhost:5000/static/product_images/Mac/Macpro/macpro_4.webp",
-            "http://localhost:5000/static/product_images/Mac/Macpro/macpro_5.webp"
+            "/static/product_images/Mac/Macpro/macpro_1.jpg",
+            "/static/product_images/Mac/Macpro/macpro_2.webp",
+            "/static/product_images/Mac/Macpro/macpro_3.webp",
+            "/static/product_images/Mac/Macpro/macpro_4.webp",
+            "/static/product_images/Mac/Macpro/macpro_5.webp"
         ]
     },
     {
@@ -949,10 +949,10 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/ipad/ipadpro/ipadpro_1.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadpro/ipadpro_2.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadpro/ipadpro_3.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadpro/ipadpro_4.jpg"
+            "/static/product_images/ipad/ipadpro/ipadpro_1.jpg",
+            "/static/product_images/ipad/ipadpro/ipadpro_2.jpg",
+            "/static/product_images/ipad/ipadpro/ipadpro_3.jpg",
+            "/static/product_images/ipad/ipadpro/ipadpro_4.jpg"
         ]
     },
     {
@@ -1042,13 +1042,13 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_1.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_2.webp",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_3.webp",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_4.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_5.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_6.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadair/ipadair_7.jpg"
+            "/static/product_images/ipad/ipadair/ipadair_1.jpg",
+            "/static/product_images/ipad/ipadair/ipadair_2.webp",
+            "/static/product_images/ipad/ipadair/ipadair_3.webp",
+            "/static/product_images/ipad/ipadair/ipadair_4.jpg",
+            "/static/product_images/ipad/ipadair/ipadair_5.jpg",
+            "/static/product_images/ipad/ipadair/ipadair_6.jpg",
+            "/static/product_images/ipad/ipadair/ipadair_7.jpg"
         ]
     },
     {
@@ -1110,12 +1110,12 @@ products = [
         "featured": True,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/ipad/ipad_1.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipad_2.webp",
-            "http://localhost:5000/static/product_images/ipad/ipad_3.webp",
-            "http://localhost:5000/static/product_images/ipad/ipad_4.webp",
-            "http://localhost:5000/static/product_images/ipad/ipad_5.webp",
-            "http://localhost:5000/static/product_images/ipad/ipad_6.webp"
+            "/static/product_images/ipad/ipad_1.jpg",
+            "/static/product_images/ipad/ipad_2.webp",
+            "/static/product_images/ipad/ipad_3.webp",
+            "/static/product_images/ipad/ipad_4.webp",
+            "/static/product_images/ipad/ipad_5.webp",
+            "/static/product_images/ipad/ipad_6.webp"
         ]
     },
     {
@@ -1177,12 +1177,12 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_1.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_2.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_3.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_4.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_5.jpg",
-            "http://localhost:5000/static/product_images/ipad/ipadmini/ipadmini_6.jpg"
+            "/static/product_images/ipad/ipadmini/ipadmini_1.jpg",
+            "/static/product_images/ipad/ipadmini/ipadmini_2.jpg",
+            "/static/product_images/ipad/ipadmini/ipadmini_3.jpg",
+            "/static/product_images/ipad/ipadmini/ipadmini_4.jpg",
+            "/static/product_images/ipad/ipadmini/ipadmini_5.jpg",
+            "/static/product_images/ipad/ipadmini/ipadmini_6.jpg"
         ]
     },
     {
@@ -1285,9 +1285,9 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/watch/watchseries11/watch11_1.png",
-            "http://localhost:5000/static/product_images/watch/watchseries11/watch11_2.png",
-            "http://localhost:5000/static/product_images/watch/watchseries11/watch11_3.png"
+            "/static/product_images/watch/watchseries11/watch11_1.png",
+            "/static/product_images/watch/watchseries11/watch11_2.png",
+            "/static/product_images/watch/watchseries11/watch11_3.png"
         ]
     },
     {
@@ -1373,10 +1373,10 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/watch/watch_SE_3/watchse3_1.png",
-            "http://localhost:5000/static/product_images/watch/watch_SE_3/watchse3_2.png",
-            "http://localhost:5000/static/product_images/watch/watch_SE_3/watchse3_3.png",
-            "http://localhost:5000/static/product_images/watch/watch_SE_3/watchse3_4.png"
+            "/static/product_images/watch/watch_SE_3/watchse3_1.png",
+            "/static/product_images/watch/watch_SE_3/watchse3_2.png",
+            "/static/product_images/watch/watch_SE_3/watchse3_3.png",
+            "/static/product_images/watch/watch_SE_3/watchse3_4.png"
         ]
     },
     {
@@ -1476,10 +1476,10 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/watch/watch_ultra3/watchultra3_1.png",
-            "http://localhost:5000/static/product_images/watch/watch_ultra3/watchultra3_2.png",
-            "http://localhost:5000/static/product_images/watch/watch_ultra3/watchultra3_3.png",
-            "http://localhost:5000/static/product_images/watch/watch_ultra3/watchultra3_4.png"
+            "/static/product_images/watch/watch_ultra3/watchultra3_1.png",
+            "/static/product_images/watch/watch_ultra3/watchultra3_2.png",
+            "/static/product_images/watch/watch_ultra3/watchultra3_3.png",
+            "/static/product_images/watch/watch_ultra3/watchultra3_4.png"
         ]
     },
     {
@@ -1514,8 +1514,8 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/airpods/airpods_3/airpods3_1.jpg",
-            "http://localhost:5000/static/product_images/airpods/airpods_3/airpods3_2.jpg"
+            "/static/product_images/airpods/airpods_3/airpods3_1.jpg",
+            "/static/product_images/airpods/airpods_3/airpods3_2.jpg"
         ]
     },
     {
@@ -1550,7 +1550,7 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/airpods/airpods_4/airpods4_1.jpg"
+            "/static/product_images/airpods/airpods_4/airpods4_1.jpg"
         ]
     },
     {
@@ -1583,7 +1583,7 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/airpods/airpods_4/airpods4_1.jpg"
+            "/static/product_images/airpods/airpods_4/airpods4_1.jpg"
         ]
     },
     {
@@ -1620,13 +1620,13 @@ products = [
         "featured": True,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_1.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_2.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_3.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_4.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_5.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_6.png",
-            "http://localhost:5000/static/product_images/airpods/airpods_max/airpodsmax_7.png"
+            "/static/product_images/airpods/airpods_max/airpodsmax_1.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_2.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_3.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_4.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_5.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_6.png",
+            "/static/product_images/airpods/airpods_max/airpodsmax_7.png"
         ]
     },
     {
@@ -1683,13 +1683,13 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_1.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_2.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_3.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_4.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_5.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_6.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod_mini/homepodmini_7.jpg"
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_1.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_2.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_3.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_4.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_5.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_6.jpg",
+            "/static/product_images/TV_and_home/homepod_mini/homepodmini_7.jpg"
         ]
     },
     {
@@ -1748,10 +1748,10 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/TV_and_home/homepod/homepod_1.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod/homepod_2.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod/homepod_3.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/homepod/homepod_4.jpg"
+            "/static/product_images/TV_and_home/homepod/homepod_1.jpg",
+            "/static/product_images/TV_and_home/homepod/homepod_2.jpg",
+            "/static/product_images/TV_and_home/homepod/homepod_3.jpg",
+            "/static/product_images/TV_and_home/homepod/homepod_4.jpg"
         ]
     },
     {
@@ -1818,11 +1818,11 @@ products = [
         "featured": False,
         "new": False,
         "images": [
-            "http://localhost:5000/static/product_images/TV_and_home/Apple_TV/appletv_1.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/Apple_TV/appletv_2.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/Apple_TV/appletv_3.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/Apple_TV/appletv_4.jpg",
-            "http://localhost:5000/static/product_images/TV_and_home/Apple_TV/appletv_5.jpg"
+            "/static/product_images/TV_and_home/Apple_TV/appletv_1.jpg",
+            "/static/product_images/TV_and_home/Apple_TV/appletv_2.jpg",
+            "/static/product_images/TV_and_home/Apple_TV/appletv_3.jpg",
+            "/static/product_images/TV_and_home/Apple_TV/appletv_4.jpg",
+            "/static/product_images/TV_and_home/Apple_TV/appletv_5.jpg"
         ]
     },
     {
@@ -1883,12 +1883,12 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_1.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_2.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_3.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_4.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_5.jpg",
-            "http://localhost:5000/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_6.jpg"
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_1.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_2.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_3.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_4.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_5.jpg",
+            "/static/product_images/Mac/Macbook_Air_13''_and_15''/mac13&15_6.jpg"
         ]
     },
     {
@@ -1966,10 +1966,10 @@ products = [
         "featured": False,
         "new": True,
         "images": [
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_1.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_2.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_3.webp",
-            "http://localhost:5000/static/product_images/Mac/MacBook_Pro/macpro_7.webp"
+            "/static/product_images/Mac/MacBook_Pro/macpro_1.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_2.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_3.webp",
+            "/static/product_images/Mac/MacBook_Pro/macpro_7.webp"
         ]
     }
 ]
