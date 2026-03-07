@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import './iPadLayout.css'
+import './IPadLayout.css'
 
 const IPadLayout = ({ products }) => {
     // Correct Order: Pro, Air, iPad, mini
