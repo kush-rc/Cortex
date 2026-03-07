@@ -36,6 +36,12 @@ const Login = () => {
                     </div>
                 )}
 
+                <div className="auth-demo-info" style={{ backgroundColor: '#f5f5f7', padding: '15px', borderRadius: '12px', marginBottom: '20px', fontSize: '13px', color: '#1d1d1f' }}>
+                    <strong>Demo Account:</strong><br />
+                    Email: <em>hello@example.com</em><br />
+                    Password: <em>hello123</em>
+                </div>
+
                 <form onSubmit={handleSubmit} className="auth-form">
                     <div className="form-group">
                         <input

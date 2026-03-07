@@ -6,7 +6,9 @@ import './Auth.css';
 const Signup = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+    const [mobile, setMobile] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
     const { signup } = useAuth();
@@ -15,7 +17,13 @@ const Signup = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('');
-        const result = await signup(username, email, password);
+
+        if (password !== confirmPassword) {
+            setError('Passwords do not match.');
+            return;
+        }
+
+        const result = await signup(username, email, mobile, password);
         if (result.success) {
             navigate('/');
         } else {
@@ -62,6 +70,17 @@ const Signup = () => {
 
                     <div className="form-group">
                         <input
+                            type="tel"
+                            className="auth-input"
+                            placeholder="Mobile Number"
+                            value={mobile}
+                            onChange={(e) => setMobile(e.target.value)}
+                            required
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <input
                             type={showPassword ? "text" : "password"}
                             className="auth-input"
                             placeholder="Password"
@@ -76,6 +95,17 @@ const Signup = () => {
                         >
                             {showPassword ? "Hide" : "Show"}
                         </button>
+                    </div>
+
+                    <div className="form-group">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            className="auth-input"
+                            placeholder="Confirm Password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                        />
                     </div>
 
                     <button type="submit" className="btn-auth">Create Account</button>

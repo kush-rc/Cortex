@@ -28,19 +28,24 @@ def signup():
     data = request.get_json()
     username = data.get('username')
     email = data.get('email')
+    mobile = data.get('mobile')
     password = data.get('password')
 
-    if not username or not email or not password:
+    if not username or not email or not mobile or not password:
         return jsonify({"error": "Missing definition"}), 400
 
     if users_collection.find_one({"email": email}):
         return jsonify({"error": "Email already registered"}), 409
+        
+    if users_collection.find_one({"mobile": mobile}):
+        return jsonify({"error": "Mobile number already registered"}), 409
 
     hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
     
     new_user = {
         "username": username,
         "email": email,
+        "mobile": mobile,
         "password": hashed_password,
         "cart": [],
         "created_at": datetime.utcnow()
@@ -59,10 +64,16 @@ def signup():
 @auth_bp.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
-    email = data.get('email')
+    identifier = data.get('email')  # UI still passes it as 'email' state
     password = data.get('password')
 
-    user = users_collection.find_one({"email": email})
+    # Find user by email OR mobile number
+    user = users_collection.find_one({
+        "$or": [
+            {"email": identifier},
+            {"mobile": identifier}
+        ]
+    })
 
     if user and bcrypt.check_password_hash(user['password'], password):
         access_token = create_access_token(identity=str(user['_id']))
