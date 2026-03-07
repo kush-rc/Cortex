@@ -8,6 +8,7 @@ from pathlib import Path
 
 # Add parent to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent))
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
