@@ -1652,6 +1652,24 @@ products = [
             "Sound Recognition",
             "Temperature and humidity sensor"
         ],
+        "audio": [
+            "Surprising sound for its size",
+            "Full-range driver",
+            "Dual force-cancelling passive radiators",
+            "Stereo pair capable",
+            "Multi-room audio"
+        ],
+        "assistant": [
+            "Siri",
+            "Intelligent assistant",
+            "Voice recognition"
+        ],
+        "smart_home": [
+            "Smart home hub",
+            "Sound Recognition",
+            "Temperature and humidity sensor",
+            "Private and secure"
+        ],
         "display": "N/A",
         "chip": "S5 chip",
         "camera": "N/A",
@@ -1696,6 +1714,26 @@ products = [
             "Smart home hub",
             "Sound Recognition",
             "Temperature and humidity sensor"
+        ],
+        "audio": [
+            "Immersive, high-fidelity audio",
+            "High-excursion woofer",
+            "Beamforming array of five tweeters",
+            "Spatial Audio",
+            "Room sensing",
+            "Stereo pair capable",
+            "Multi-room audio"
+        ],
+        "assistant": [
+            "Siri",
+            "Intelligent assistant",
+            "Voice recognition"
+        ],
+        "smart_home": [
+            "Smart home hub",
+            "Sound Recognition",
+            "Temperature and humidity sensor",
+            "Private and secure"
         ],
         "display": "N/A",
         "chip": "S7 chip",
@@ -1749,6 +1787,20 @@ products = [
             "Smart home hub",
             "Apple TV+, Apple Music, Apple Arcade, Photos",
             "3 months Apple TV+ free with purchase"
+        ],
+        "video": [
+            "4K Dolby Vision",
+            "HDR10+"
+        ],
+        "audio": [
+            "Dolby Atmos"
+        ],
+        "remote": [
+            "Siri Remote (3rd generation) with USB-C"
+        ],
+        "smart_home": [
+            "Smart home hub",
+            "Thread networking (Ethernet model)"
         ],
         "display": "N/A",
         "chip": "A15 Bionic chip",

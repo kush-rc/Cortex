@@ -685,7 +685,7 @@ def chat():
                 
         if prod.get('colors'):
             p_ctx += f"- Colors: {', '.join(prod['colors'])}\n"
-        for key in ['storage', 'memory', 'sizes', 'chips', 'display_finishes', 'materials', 'connectivity', 'bands', 'models']:
+        for key in ['storage', 'memory', 'sizes', 'chips', 'display_finishes', 'materials', 'connectivity', 'bands', 'models', 'features', 'audio', 'video', 'assistant', 'remote', 'smart_home']:
             if prod.get(key):
                 items = prod[key]
                 clean = []
