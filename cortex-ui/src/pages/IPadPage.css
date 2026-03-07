@@ -1,0 +1,23 @@
+/* IPadPage.css - Matches MacPage.css */
+.ipad-page .category-header {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.ipad-page .category-title {
+    font-size: 64px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+.ipad-page .container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.ipad-page .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}

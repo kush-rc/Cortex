@@ -1,0 +1,238 @@
+/* Footer.css */
+.footer {
+    background-color: #f5f5f7;
+    color: #86868b;
+    font-size: 12px;
+    line-height: 1.33337;
+    font-weight: 400;
+    padding: 0 22px;
+    padding-bottom: 40px;
+}
+
+.footer-content {
+    max-width: 980px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.footer-top-text {
+    border-bottom: 1px solid #d2d2d7;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+
+.footer-top-text p {
+    margin-bottom: 10px;
+    color: #86868b;
+}
+
+.footer-breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d2d2d7;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.footer-breadcrumb-icon {
+    font-size: 16px;
+    color: #1d1d1f;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.footer-breadcrumb-sep {
+    margin: 0 8px;
+    color: #86868b;
+}
+
+.footer-breadcrumb-text {
+    color: #1d1d1f;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-column {
+    flex-basis: 18%;
+}
+
+.footer-column h3 {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-right: 20px;
+    margin-bottom: 9px;
+    margin-top: 20px;
+}
+
+.footer-column h3:first-child {
+    margin-top: 0;
+}
+
+.footer-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-column li {
+    margin-bottom: 9px;
+}
+
+.footer-column a {
+    color: #424245;
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+    color: #1d1d1f;
+}
+
+.footer-bottom {
+    margin-top: 34px;
+    padding-top: 34px;
+    border-top: 1px solid #d2d2d7;
+    /* Should be separate if needed, but standard is just top text border or spacing */
+    /* top text has border-bottom, so bottom section has no border-top unless specified? 
+       Apple site has border below columns. Columns don't have border. 
+       Actually the columns sit between two borders. Top text -> Border -> Columns -> Border -> Bottom Text.
+       I'll add border-bottom to footer-links just to be safe or border-top to footer-bottom?
+    */
+    border-top: none;
+    /* Reset */
+    position: relative;
+}
+
+.footer-content {
+    /* To handle the borders correctly */
+}
+
+/* Add simplified border handling: Top text has bottom border. Columns have no border. Bottom has Top border? No.
+   It's usually: Top Text (Border Bottom) -> Columns -> (No Border?) -> Bottom Section (Border Top).
+   Let's check apple.com.
+   Footnotes (Border Bottom).
+   Columns.
+   Bottom Section (Border Top).
+*/
+
+.footer-links {
+    padding-bottom: 40px;
+}
+
+.footer-bottom {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 20px;
+}
+
+.footer-shop-text {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+    color: #86868b;
+}
+
+.footer-shop-text a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer-shop-text a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.footer-copyright {
+    margin-right: 30px;
+}
+
+.footer-legal-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    /* Space between links */
+    flex-grow: 1;
+}
+
+.footer-legal-links li {
+    position: relative;
+}
+
+.footer-legal-links li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -12px;
+    color: #d2d2d7;
+}
+
+.footer-legal-links a {
+    color: #424245;
+    text-decoration: none;
+}
+
+.footer-legal-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-locale {
+    margin-left: auto;
+}
+
+.footer-locale a {
+    color: #424245;
+    text-decoration: none;
+}
+
+.footer-locale a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 833px) {
+    .footer-links {
+        flex-direction: column;
+    }
+
+    .footer-column {
+        flex-basis: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Mobile columns often collapse, but for now we just stack them */
+    .footer-column h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-legal-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .footer-legal-links li:not(:last-child)::after {
+        display: none;
+    }
+
+    .footer-copyright-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-locale {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

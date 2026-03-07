@@ -1,0 +1,244 @@
+.tv-home-outer {
+    background: #f5f5f7;
+    width: 100%;
+}
+
+.tv-home-content {
+    max-width: 1250px;
+    /* Mirror global container */
+    margin: 0 auto;
+    padding: 40px 0px 0px 0px;
+    /* Sync with global padding */
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Dense Apple grid spacing */
+    background-color: #f5f5f7;
+}
+
+.tv-grid-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Base Card */
+.tv-card {
+    border-radius: 32px;
+    padding: 60px 0px 0px 0px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 640px;
+    /* Taller Apple aspect ratio */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tv-card:hover {
+    transform: scale(1.002);
+}
+
+/* Themes */
+.dark-card {
+    background-color: #000;
+    color: #f5f5f7;
+}
+
+.light-card {
+    background-color: #ffffff;
+    color: #1d1d1f;
+}
+
+.full-width-card {
+    background-color: #ffffff;
+    min-height: 600px;
+    padding-top: 80px;
+}
+
+/* Content */
+.tv-card-content {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* Typography */
+.tv-eyebrow {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    letter-spacing: 0.012em;
+}
+
+.tv-headline {
+    font-size: 40px;
+    /* Sync with smaller billboard headlines */
+    line-height: 1.05;
+    font-weight: 700;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+}
+
+.large-headline {
+    font-size: 56px;
+    /* Sync with full-width billboard headline */
+    margin-bottom: 24px;
+    max-width: 600px;
+}
+
+.tv-price {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0 0 24px;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.tv-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.tv-btn-blue {
+    background-color: #0071e3;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.tv-btn-blue:hover {
+    background-color: #0077ed;
+}
+
+.tv-link {
+    font-size: 17px;
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.tv-link:hover {
+    text-decoration: underline;
+}
+
+.dark-card .tv-link {
+    color: #2997ff;
+}
+
+/* Images & Bleed Effects */
+.tv-card-image-container {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* Bleed the HomePod (Dark) to the bottom and slightly wider */
+.dark-card .tv-card-image-container.bleed-bottom {
+    margin-bottom: -20px;
+    width: 110%;
+}
+
+/* Bleed the HomePod Mini (Light) to the sides and bottom */
+.light-card .tv-card-image-container.bleed-side {
+    margin-bottom: -5px;
+    width: 110%;
+}
+
+.tv-product-img {
+    width: 91%;
+    height: auto;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.mini-img {
+    max-height: 380px;
+}
+
+/* Specific Adjustments */
+.full-width-card .tv-card-content {
+    max-width: 600px;
+}
+
+.tv-logo-lockup {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #1d1d1f;
+}
+
+.tv-4k {
+    font-weight: 500;
+    background: #1d1d1f;
+    color: #fff;
+    padding: 0 7px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.atv-container {
+    width: 100%;
+    max-width: 700px;
+}
+
+.atv-img {
+    margin-top: 40px;
+    max-height: 400px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .tv-home-content {
+        padding: 20px 20px 60px;
+    }
+
+    .tv-main-title {
+        font-size: 52px;
+    }
+
+    .tv-headline {
+        font-size: 36px;
+    }
+
+    .tv-card {
+        min-height: 520px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tv-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .large-headline {
+        font-size: 40px;
+    }
+
+    .tv-card {
+        border-radius: 20px;
+        min-height: 480px;
+    }
+
+    .tv-product-img {
+        max-height: 300px;
+    }
+}

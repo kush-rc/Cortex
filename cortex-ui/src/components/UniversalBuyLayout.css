@@ -1,0 +1,264 @@
+/* =====================================================
+   Universal Buy Page — High-Fidelity Design Standard
+   ===================================================== */
+
+.universal-buy-page {
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* Promo Ribbon */
+.universal-ribbon {
+    background: #f5f5f7;
+    border-bottom: 1px solid #d2d2d7;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.universal-ribbon p {
+    font-size: 12px;
+    margin: 0;
+    color: #1d1d1f;
+}
+
+/* Hero Header Section */
+.universal-hero-header {
+    background: #fff;
+    padding: 0px 0 40px;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.universal-hero-header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.universal-hero-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.003em;
+    margin: 0 0 12px 0;
+}
+
+.universal-hero-price-summary {
+    font-size: 19px;
+    color: #1d1d1f;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+/* Sticky Header Section */
+.sticky-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #d2d2d7;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    transform: translateY(-101%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sticky-header-wrapper.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.sticky-header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 12px 40px;
+}
+
+.sticky-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sticky-header-left h1 {
+    font-size: 21px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.sticky-header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Main Layout Grid */
+.universal-main {
+    display: flex;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 0;
+    gap: 80px;
+}
+
+.column-left {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+}
+
+.column-right {
+    flex: 1;
+}
+
+/* Interactive Gallery */
+.gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+.gallery-image-viewport {
+    aspect-ratio: 16 / 10;
+    background: #fbfbfd;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Selection Steps */
+.config-step {
+    border-bottom: 1px solid #d2d2d7;
+    padding: 40px 0;
+}
+
+.step-header {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.step-header .subheading {
+    color: #6e6e73;
+}
+
+/* Selection Cards */
+.selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selector-card {
+    border: 2px solid #d2d2d7;
+    border-radius: 12px;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.selector-card:hover {
+    border-color: #86868b;
+}
+
+.selector-card.selected {
+    border-color: #0071e3;
+    background: rgba(0, 113, 227, 0.05);
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.card-price-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.card-emi {
+    font-size: 14px;
+    color: #1d1d1f;
+    line-height: 1.4;
+}
+
+.card-total {
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+/* Color Swatches */
+.swatch-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.swatch-item {
+    cursor: pointer;
+    text-align: center;
+}
+
+.swatch-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+    margin: 0 auto 8px;
+}
+
+.swatch-dot.active {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 2px #fff inset;
+}
+
+/* Success Toast */
+.success-toast-container {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.success-toast {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(20px);
+    padding: 16px 32px;
+    border-radius: 980px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    animation: toastSlideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes toastSlideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

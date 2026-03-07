@@ -1,0 +1,154 @@
+/* =====================================================
+   Auth Pages — Apple Style
+   ===================================================== */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--nav-height);
+    background: #fff;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.auth-header {
+    margin-bottom: 56px;
+}
+
+.auth-title {
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+.auth-subtitle {
+    font-size: 17px;
+    color: #1d1d1f;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-group {
+    position: relative;
+    width: 100%;
+}
+
+.auth-input {
+    width: 100%;
+    height: 56px;
+    padding: 18px 16px;
+    font-size: 17px;
+    border: 1px solid #d2d2d7;
+    border-radius: 12px;
+    background: #fff;
+    color: #1d1d1f;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.auth-input:focus {
+    border-color: #0071e3;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.12);
+}
+
+.auth-input::placeholder {
+    color: #86868b;
+}
+
+.auth-input.has-error {
+    border-color: #d60017;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0071e3;
+    font-size: 14px;
+    /* Icon size or text size */
+    padding: 0;
+    font-weight: 400;
+}
+
+.password-toggle:hover {
+    text-decoration: underline;
+}
+
+.auth-error {
+    color: #d60017;
+    font-size: 14px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.btn-auth {
+    height: 56px;
+    border-radius: 12px;
+    /* Apple uses softer rounded rects for inputs/buttons in auth */
+    font-size: 17px;
+    font-weight: 400;
+    background: #0071e3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background 0.2s ease;
+}
+
+.btn-auth:hover {
+    background: #0077ed;
+}
+
+.auth-footer {
+    margin-top: 48px;
+    font-size: 14px;
+    color: #6e6e73;
+}
+
+.auth-link {
+    color: #0071e3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
+
+.auth-divider {
+    margin: 32px 0;
+    border-top: 1px solid #d2d2d7;
+    position: relative;
+}
+
+.auth-divider-text {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    padding: 0 16px;
+    color: #86868b;
+    font-size: 14px;
+}

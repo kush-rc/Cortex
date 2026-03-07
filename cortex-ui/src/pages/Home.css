@@ -1,0 +1,22 @@
+/* Home Page - Light Theme */
+.home-page {
+    padding-top: var(--nav-height);
+    background: #fff;
+}
+
+/* Override existing hero styles if needed */
+.hero-section {
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Mobile adjustments for images */
+@media (max-width: 734px) {
+    .hero-section {
+        background-size: contain;
+        background-position: center bottom;
+        padding-bottom: 300px;
+        /* Space for image */
+    }
+}

@@ -1,0 +1,260 @@
+/* =====================================================
+   CORTEX — Apple Light Theme Design System
+   ===================================================== */
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors - Apple Light Theme */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f5f5f7;
+    --color-bg-tertiary: #fbfbfd;
+    --color-bg-card: #ffffff;
+    --color-bg-backdrop: rgba(255, 255, 255, 0.72);
+
+    --color-text-primary: #1d1d1f;
+    --color-text-secondary: #86868b;
+    --color-text-headline: #1d1d1f;
+
+    --color-accent: #0071e3;
+    --color-accent-hover: #0077ed;
+    --color-buy: #0071e3;
+    --color-buy-hover: #0077ed;
+    --color-link: #06c;
+    --color-border: #d2d2d7;
+
+    --color-nav-bg: rgba(251, 251, 253, 0.8);
+    --color-nav-text: #1d1d1f;
+    --color-nav-hover: #000000;
+
+    /* Typography */
+    --font-primary: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', Roboto, sans-serif;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 80px;
+
+    /* Layout */
+    --max-width: 980px;
+    --max-width-wide: 1200px;
+    --nav-height: 44px;
+    --border-radius: 18px;
+    --border-radius-sm: 12px;
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* Base Styles */
+html {
+    font-size: 17px;
+    scroll-behavior: smooth;
+    /* -webkit-font-smoothing: antialiased; */
+    /* Moved to body */
+    /* -moz-osx-font-smoothing: grayscale; */
+    /* Moved to body */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fff;
+    color: var(--color-text-primary);
+    font-size: 17px;
+    letter-spacing: -0.022em;
+    font-weight: 400;
+    line-height: 1.47059;
+    overflow-x: hidden;
+}
+
+/* Typography Scale */
+.headline-super {
+    font-size: clamp(48px, 6vw, 80px);
+    /* Increased */
+    font-weight: var(--font-weight-bold);
+    letter-spacing: -0.003em;
+    line-height: 1.08349;
+    color: var(--color-text-headline);
+}
+
+.headline-large {
+    font-size: 56px;
+    /* Increased from 48px */
+    line-height: 1.08349;
+    font-weight: 700;
+    letter-spacing: -0.003em;
+    color: var(--color-text-headline);
+}
+
+.headline-medium {
+    font-size: 48px;
+    /* Increased from 40px */
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: 0em;
+}
+
+.headline-small {
+    font-size: 32px;
+    /* Increased from 28px */
+    line-height: 1.14286;
+    font-weight: 600;
+    letter-spacing: .007em;
+}
+
+.subhead {
+    font-size: 24px;
+    /* Increased from 21px */
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    color: var(--color-text-headline);
+}
+
+.body-text {
+    font-size: 19px;
+    /* Increased from 17px */
+    line-height: 1.47059;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.container-wide {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 1.17648;
+    font-weight: 400;
+    letter-spacing: -0.022em;
+    min-width: 28px;
+    padding-left: 21px;
+    padding-right: 21px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    border-radius: 980px;
+    background: var(--color-buy);
+    color: #fff;
+}
+
+.btn:hover {
+    background: var(--color-buy-hover);
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-link);
+    font-size: 21px;
+    line-height: 1.381;
+    font-weight: 400;
+    letter-spacing: .011em;
+    padding: 0;
+}
+
+.btn-secondary:hover {
+    text-decoration: underline;
+}
+
+.btn-secondary::after {
+    content: ' ›';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--color-link);
+    border: 1px solid var(--color-link);
+}
+
+/* Page Layouts - Tweaks */
+
+/* Max width utility for description */
+.max-w-800 {
+    max-width: 800px;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-4 {
+    margin-bottom: 24px;
+}
+
+/* Typography Enhancements */
+.body-text-large {
+    font-size: 21px;
+    line-height: 1.4;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.pd-description {
+    padding: 80px 20px;
+    background: white;
+}
+
+/* Home Page Grid */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+    max-width: auto;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+}

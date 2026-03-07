@@ -1,0 +1,63 @@
+/* MacCategoryNav.css */
+.mac-category-nav {
+    background-color: #fff;
+    padding: 12px 0;
+    overflow-x: auto;
+    border-bottom: 1px solid #d2d2d7;
+    /* Optional, Mac page usually cleaner but maybe? */
+    /* Sticky? User screenshot shows it at top. */
+    position: relative;
+    z-index: 10;
+}
+
+.mac-nav-container {
+    display: flex;
+    justify-content: center;
+    min-width: 800px;
+    /* Ensure detail doesn't cramp */
+    margin: 0 auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.mac-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #1d1d1f;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.mac-nav-item:hover {
+    color: #0066cc;
+}
+
+.mac-nav-icon-wrapper {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+/* Specific SVG styling handled in component inline or matched here */
+.mac-nav-icon {
+    width: 100%;
+    height: 100%;
+    /* Object fit contain equivalent for SVG is viewBox */
+}
+
+.mac-nav-label {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .mac-nav-container {
+        justify-content: flex-start;
+    }
+}

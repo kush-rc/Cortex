@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Build outputs
+cortex-ui/dist/
+*.built.css
+
+# AI Model files (too large for Git — 2GB+)
+gizmo/models/*.gguf
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temp / Backup files
+*.temp.json
+*.bak
+*.log
+
+# Gemini agent artifacts
+.gemini/

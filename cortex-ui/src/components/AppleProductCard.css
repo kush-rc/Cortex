@@ -1,0 +1,164 @@
+/* AppleProductCard.css */
+/* Same as MacProductCard but generic name */
+.apple-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    background: #fff;
+    min-height: 500px;
+    transition: all 0.3s ease;
+}
+
+.apple-card-image-wrapper {
+    height: 220px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+.apple-card-image {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.apple-card-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    min-height: 14px;
+}
+
+.apple-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.apple-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 5px;
+}
+
+.apple-card-chip {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+}
+
+.apple-card-desc {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #1d1d1f;
+    max-width: 300px;
+    margin: 0 auto 15px;
+}
+
+.apple-card-pricing {
+    margin-bottom: 20px;
+}
+
+.apple-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.apple-emi {
+    font-size: 12px;
+    color: #1d1d1f;
+}
+
+.apple-card-actions-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0 auto;
+}
+
+.apple-card-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.apple-btn-learn {
+    background-color: #0071e3;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 980px;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.apple-btn-learn:hover {
+    background-color: #0077ed;
+}
+
+.apple-btn-buy {
+    color: #0066cc;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.apple-btn-buy:hover {
+    text-decoration: underline;
+}
+
+.apple-btn-buy span {
+    font-size: 10px;
+    margin-left: 2px;
+}
+
+/* ── Compare Button ── */
+.apple-compare-btn {
+    margin-top: 12px;
+    width: 100%;
+    padding: 7px 0;
+    border: 1px solid #d2d2d7;
+    border-radius: 980px;
+    background: transparent;
+    color: #1d1d1f;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.apple-compare-btn:hover:not(.compare-disabled) {
+    border-color: #0071e3;
+    color: #0071e3;
+}
+
+.apple-compare-btn.in-compare {
+    background: #34c759;
+    border-color: #34c759;
+    color: #fff;
+}
+
+.apple-compare-btn.compare-disabled {
+    background: #f5f5f7;
+    color: #86868b;
+    cursor: not-allowed;
+}
+
+/* Highlight card when in compare list */
+.apple-product-card--in-compare {
+    outline: 2px solid #34c759;
+    outline-offset: 2px;
+    border-radius: 4px;
+}

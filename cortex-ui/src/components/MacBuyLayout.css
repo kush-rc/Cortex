@@ -1,0 +1,477 @@
+/* =====================================================
+   MacBook Air Buy Page — High-Fidelity Design
+   ===================================================== */
+
+.rf-bfe-mac {
+    background: #fff;
+    min-height: 100vh;
+}
+
+/* Promo Ribbon */
+.rf-bfe-ribbon {
+    background: #f5f5f7;
+    border-bottom: 1px solid #d2d2d7;
+    padding: 12px 0;
+    text-align: center;
+}
+
+.rf-bfe-ribbon p {
+    font-size: 12px;
+    margin: 0;
+    color: #1d1d1f;
+}
+
+/* Hero Header Section */
+.rf-bfe-hero-header {
+    background: #fff;
+    padding: 0px 0 40px;
+    border-bottom: 1px solid #f5f5f7;
+}
+
+.rf-bfe-hero-header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.rf-bfe-hero-header h1 {
+    font-size: 48px;
+    font-weight: 600;
+    color: #1d1d1f;
+    letter-spacing: -0.003em;
+    margin: 0 0 12px 0;
+}
+
+.rf-bfe-hero-price-summary {
+    font-size: 19px;
+    color: #1d1d1f;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.rf-bfe-hero-price-summary .as-emi {
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Header Section - Refined Sticky with Transition */
+.rf-bfe-header-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid #d2d2d7;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+    transform: translateY(-101%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rf-bfe-header-wrapper.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.rf-bfe-header-container {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.rf-bfe-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.rf-bfe-header-left h1 {
+    font-size: 21px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin: 0;
+}
+
+.rf-bfe-header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.rf-bfe-header-price {
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+.rf-bfe-header-emi {
+    font-size: 12px;
+    color: #1d1d1f;
+    letter-spacing: -0.01em;
+}
+
+.rf-bfe-header-shipping {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #0066cc;
+    margin-top: 2px;
+}
+
+.rf-bfe-header-price .updated {
+    display: inline-block;
+    animation: priceBump 0.4s ease-out;
+}
+
+@keyframes priceBump {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+        color: #0071e3;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Success Toast - Bottom Aligned */
+.rf-bfe-toast-container {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.rf-bfe-toast {
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: toastSlideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    pointer-events: auto;
+}
+
+.rf-bfe-toast-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #0071e3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+@keyframes toastSlideUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.rf-bfe-toast.hiding {
+    animation: toastSlideDown 0.4s ease-in forwards;
+}
+
+@keyframes toastSlideDown {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* Main Layout Grid */
+.rf-bfe-main {
+    display: flex;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 40px 0px 40px 0px;
+    gap: 80px;
+}
+
+/* Gallery Container & Controls */
+.rf-bfe-gallery-container {
+    position: relative;
+    width: 100%;
+}
+
+.rf-bfe-gallery-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    /* Maintain a consistent high-fidelity aspect ratio */
+    height: auto;
+    border-radius: 25px;
+    object-fit: cover;
+    background: #fbfbfd;
+    /* Subtle background to fill gaps if image doesn't match aspect ratio */
+    transition: opacity 0.4s ease-in-out;
+}
+
+.rf-bfe-gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.rf-bfe-gallery-arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    color: #1d1d1f;
+    opacity: 0.8;
+}
+
+.rf-bfe-gallery-arrow:hover {
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 1;
+}
+
+.rf-bfe-gallery-arrow:active {
+    transform: scale(0.9);
+}
+
+.rf-bfe-gallery-dots {
+    display: flex;
+    gap: 12px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 980px;
+}
+
+.rf-bfe-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #86868b;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.rf-bfe-dot:hover {
+    transform: scale(1.2);
+}
+
+.rf-bfe-dot.active {
+    background: #1d1d1f;
+}
+
+/* Left Column Optimization */
+.rf-bfe-column-left {
+    flex: 1.2;
+    position: sticky;
+    top: 140px;
+    /* Adjusted for sticky header */
+    height: fit-content;
+}
+
+/* Right Column: Scrollable Selection Area */
+.rf-bfe-column-right {
+    flex: 0.8;
+}
+
+.rf-bfe-step {
+    margin-bottom: 80px;
+}
+
+.rs-mac-bfe-step-header {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #1d1d1f;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.rs-mac-bfe-step-header span {
+    font-size: 24px;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.rs-mac-bfe-step-header .as-subheading {
+    font-weight: 400;
+    color: #6e6e73;
+}
+
+/* Selection Cards */
+.form-selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-selector {
+    border: 2px solid #d2d2d7;
+    border-radius: 12px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-selector:hover {
+    border-color: #86868b;
+}
+
+.form-selector.selected {
+    border-color: #0071e3;
+    background: #fff;
+}
+
+.form-selector-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+/* Size Selector Specifics */
+.form-selector.size-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 18px 24px;
+}
+
+.form-selector-price-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    max-width: 60%;
+}
+
+.price-emi {
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.price-total {
+    font-size: 14px;
+    color: #1d1d1f;
+    font-weight: 400;
+}
+
+.form-label-small {
+    font-size: 14px;
+    color: #1d1d1f;
+}
+
+/* Color Nav Swatches */
+.colornav-items {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
+}
+
+.colornav-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.colornav-swatch.active {
+    border-color: #0071e3;
+}
+
+.colornav-label {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 8px;
+    color: #6e6e73;
+}
+
+/* Summary Footer */
+.rf-bfe-summary {
+    background: #f5f5f7;
+    padding: 80px 40px;
+    text-align: center;
+    border-top: 1px solid #d2d2d7;
+}
+
+.rf-bfe-summary-header {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.rf-bfe-summary-price {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 24px 0;
+}
+
+.button-block {
+    background: #0071e3;
+    color: #fff;
+    border: none;
+    border-radius: 980px;
+    padding: 18px 48px;
+    font-size: 17px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.button-block:hover {
+    background: #0077ed;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .rf-bfe-main {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .rf-bfe-column-left {
+        position: static;
+        margin-bottom: 40px;
+    }
+}

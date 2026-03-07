@@ -1,0 +1,226 @@
+.ipad-layout {
+    padding: 0 0 60px;
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    max-width: none;
+}
+
+.ipad-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Fluid padding: Align with container (max-width-wide: 1200px) + padding (24px) */
+    /* Container margin = (100vw - 1200px) / 2 */
+    /* Container padding = 24px (spacing-lg) */
+    /* Total offset = margin + padding */
+    padding-left: max(22px, calc((100vw - 1200px) / 2 + 24px));
+    padding-right: max(22px, calc((100vw - 1200px) / 2 + 24px));
+}
+
+.ipad-grid::-webkit-scrollbar {
+    display: none;
+}
+
+/* Card */
+/* Card */
+.ipad-card {
+    width: 372px;
+    /* Exact match */
+    min-width: 372px;
+    flex: 0 0 372px;
+    /* Don't grow/shrink, fixed basis */
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 14px;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Controls */
+.ipad-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    /* Align right with container */
+    padding-right: max(40px, calc((100vw - 1200px) / 2 + 24px));
+}
+
+.nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: #e8e8ed;
+    color: #1d1d1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #d2d2d7;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.ipad-card:hover {
+    box-shadow: none;
+}
+
+/* Header */
+.ipad-header {
+    margin-bottom: 20px;
+}
+
+/* Image */
+.ipad-image-container {
+    width: 100%;
+    aspect-ratio: 0.84;
+    /* Match Apple's aspect ratio */
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 30px;
+    border-radius: 18px;
+    /* Radius on container */
+    overflow: hidden;
+    /* Clip image */
+    transition: transform 0.3s ease;
+}
+
+.ipad-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.ipad-image-container:hover {
+    transform: scale(1.02);
+}
+
+/* Swatches */
+.ipad-swatches {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    min-height: 14px;
+}
+
+.swatch-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Typography */
+.ipad-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.ipad-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    letter-spacing: 0.01em;
+}
+
+.ipad-tagline {
+    font-size: 17px;
+    line-height: 1.4;
+    color: #1d1d1f;
+    max-width: 280px;
+    margin: 0 auto 16px;
+}
+
+/* Pricing */
+.ipad-pricing {
+    margin-bottom: 24px;
+    min-height: 20px;
+}
+
+.ipad-price {
+    font-size: 17px;
+    font-weight: 600;
+    /* Semibold from HTML class */
+    margin: 0 0 5px;
+    color: #1d1d1f;
+}
+
+.ipad-financing {
+    font-size: 13px;
+    color: #6e6e73;
+    /* Grey text */
+    max-width: 200px;
+    margin: 0 auto;
+    line-height: 1.3;
+}
+
+/* Buttons */
+.ipad-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-pill-blue {
+    background-color: #0071e3;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.btn-pill-blue:hover {
+    background-color: #0077ed;
+    text-decoration: none;
+}
+
+.link-buy {
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.link-buy:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .ipad-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ipad-grid {
+        grid-template-columns: 1fr;
+    }
+}

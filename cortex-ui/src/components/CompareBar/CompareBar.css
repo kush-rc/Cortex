@@ -1,0 +1,172 @@
+/* ===================================================
+   CompareBar — Floating persistent comparison tray
+   =================================================== */
+
+.compare-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    background: rgba(29, 29, 31, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    animation: compare-bar-slide-up 0.3s ease;
+}
+
+@keyframes compare-bar-slide-up {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ── Product thumbnails ── */
+.compare-bar__products {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    overflow-x: auto;
+}
+
+.compare-bar__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 8px 12px;
+    min-width: 170px;
+    max-width: 220px;
+}
+
+.compare-bar__item--empty {
+    border-style: dashed;
+    opacity: 0.4;
+}
+
+.compare-bar__img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.compare-bar__empty-slot {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.3);
+    flex-shrink: 0;
+}
+
+.compare-bar__name {
+    font-size: 12px;
+    color: #f5f5f7;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.compare-bar__name--hint {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.compare-bar__remove {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.15s;
+    flex-shrink: 0;
+}
+
+.compare-bar__remove:hover {
+    color: #ff3b30;
+}
+
+/* ── Right side actions ── */
+.compare-bar__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.compare-bar__count {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.compare-bar__clear {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 980px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.compare-bar__clear:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.compare-bar__go {
+    background: #0071e3;
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 980px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.compare-bar__go:hover:not(:disabled) {
+    background: #0077ed;
+}
+
+.compare-bar__go:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.3);
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .compare-bar {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+    }
+
+    .compare-bar__products {
+        gap: 8px;
+    }
+
+    .compare-bar__item {
+        min-width: 130px;
+    }
+}

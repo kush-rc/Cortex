@@ -1,0 +1,150 @@
+/* ===== Apple-Style Image Gallery / Carousel ===== */
+
+.image-gallery {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* Image viewport */
+.image-gallery__viewport {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #fbfbfd;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-gallery__track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.image-gallery__slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.image-gallery__slide img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* ===== Navigation Controls ===== */
+.image-gallery__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 0 10px;
+}
+
+/* Arrow buttons — Apple-style grey circles */
+.image-gallery__arrow {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: #e8e8ed;
+    color: #86868b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    font-size: 0;
+    padding: 0;
+}
+
+.image-gallery__arrow:hover {
+    background: #d2d2d7;
+    color: #1d1d1f;
+}
+
+.image-gallery__arrow:active {
+    transform: scale(0.92);
+}
+
+.image-gallery__arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+
+.image-gallery__arrow svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 2.5;
+}
+
+/* Dot indicators — pill-shaped container */
+.image-gallery__dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e8e8ed;
+    border-radius: 100px;
+    padding: 8px 14px;
+}
+
+.image-gallery__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #c4c4c7;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-gallery__dot--active {
+    background: #1d1d1f;
+    transform: scale(1.1);
+}
+
+.image-gallery__dot:hover:not(.image-gallery__dot--active) {
+    background: #a1a1a6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .image-gallery__viewport {
+        border-radius: 18px;
+    }
+
+    .image-gallery__arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .image-gallery__dots {
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    .image-gallery__dot {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+.image-gallery__bottom-section {
+    padding-bottom: 40px;
+}
