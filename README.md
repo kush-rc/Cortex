@@ -249,9 +249,7 @@ npm run dev
 
 ---
 
-## 📄 License
-This project is for educational and portfolio purposes.
+## 📄 Legal & Disclaimer
+**Disclaimer**: Cortex is a mock e-commerce portfolio project created solely for educational purposes. All product names, logos, trademarks, and brands (including Apple, Mac, iPhone, iPad, Apple Watch, AirPods, HomePod, and Apple TV) are property of their respective owners. No actual products are sold, and no real transactions take place.
 
----
-
-Built with ❤️ by **Kush Chhunchha**
+This project is not affiliated with, endorsed by, or sponsored by Apple Inc. or any other electronics manufacturer.

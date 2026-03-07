@@ -169,7 +169,10 @@ const Footer = () => {
                     </div>
                     <div className="footer-copyright-row">
                         <div className="footer-copyright">
-                            Copyright © {new Date().getFullYear()} Apple Inc. All rights reserved.
+                            <p style={{ margin: '0 0 10px 0', fontSize: '11px', color: '#6e6e73' }}>
+                                <strong>Disclaimer:</strong> Cortex is a mock e-commerce portfolio project created for educational purposes. All product names, logos, and brands are property of their respective owners. No actual products are sold.
+                            </p>
+                            Copyright © {new Date().getFullYear()} Cortex Portfolio Project. All rights reserved.
                         </div>
                         <ul className="footer-legal-links">
                             <li><Link to="#">Privacy Policy</Link></li>
