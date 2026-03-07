@@ -45,7 +45,7 @@ const Login = () => {
                 <form onSubmit={handleSubmit} className="auth-form">
                     <div className="form-group">
                         <input
-                            type="email"
+                            type="text"
                             className={`auth-input ${error ? 'has-error' : ''}`}
                             placeholder="Email or Phone Number"
                             value={email}
