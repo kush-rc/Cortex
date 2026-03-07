@@ -8,3 +8,4 @@ Flask-JWT-Extended==4.7.1
 Flask-Bcrypt==1.0.1
 gunicorn==22.0.0
 requests==2.32.3
+certifi==2024.2.2
