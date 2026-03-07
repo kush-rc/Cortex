@@ -1,18 +1,27 @@
-import React from 'react';
-
-const Logo = ({ className = '', width = "22", height = "22", style = {} }) => (
-    <div className={`cortex-logo-container ${className}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', ...style }}>
+const Logo = ({ className }) => {
+    return (
         <svg
-            width={width}
-            height={height}
-            viewBox="0 0 24 24"
-            fill="currentColor"
+            className={className}
+            viewBox="0 0 100 100"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-label="Cortex Logo"
         >
-            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 18.5C9.42 18.5 7.18 17.01 6 14.83C6.72 15.09 7.53 15.25 8.38 15.25C11.97 15.25 14.88 12.34 14.88 8.75C14.88 7.62 14.59 6.59 14.12 5.71C16.89 6.54 18.88 9.06 18.88 12C18.88 15.59 15.79 18.5 12 18.5Z" />
+            <circle cx="50" cy="50" r="45" fill="url(#logo_gradient)" />
+            <path
+                d="M50 20C33.4315 20 20 33.4315 20 50C20 66.5685 33.4315 80 50 80C66.5685 80 80 66.5685 80 50C80 33.4315 66.5685 20 50 20ZM50 72C37.8497 72 28 62.1503 28 50C28 37.8497 37.8497 28 50 28C62.1503 28 72 37.8497 72 50C72 62.1503 62.1503 72 50 72Z"
+                fill="white"
+                fillOpacity="0.8"
+            />
+            <circle cx="50" cy="50" r="12" fill="white" />
+            <defs>
+                <linearGradient id="logo_gradient" x1="20" y1="20" x2="80" y2="80" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#5E5CE6" /> {/* Indigo */}
+                    <stop offset="1" stopColor="#BF5AF2" /> {/* Purple */}
+                </linearGradient>
+            </defs>
         </svg>
-        <span style={{ fontSize: '20px', fontWeight: '500', letterSpacing: '-0.3px', color: 'currentColor' }}>Cortex</span>
-    </div>
-)
+    )
+}
 
-export default Logo;
+export default Logo

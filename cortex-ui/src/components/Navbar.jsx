@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useAuth } from '../context/AuthContext'
 import { useChat } from '../context/ChatContext'
-import Logo from './Logo'
+import AppleLogo from './AppleLogo'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -35,7 +35,7 @@ const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-inner">
                 <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
-                    <Logo className="nav-apple-logo" width="22" height="22" />
+                    <AppleLogo className="nav-apple-logo" viewBox="0 14 14 17" width="18" height="18" />
                 </Link>
 
                 <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
