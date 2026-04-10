@@ -1,9 +1,6 @@
 # 🧠 Cortex — AI-Powered Electronics Store
 
-> A full-stack Apple-inspired electronics store with an integrated AI shopping assistant (GIZMO) powered by a locally-running Llama 3.2 3B language model.
-
-<!-- Add your screenshots here -->
-<!-- ![Cortex Homepage](screenshots/homepage.png) -->
+> A full-stack Apple-inspired electronics store with an integrated AI shopping assistant (GIZMO) powered by **Llama 3.2 3B** — running locally via llama-cpp-python for development, and served via **Groq API** for the live deployment.
 
 ---
 
@@ -21,7 +18,7 @@
 - **User profiles** with order history, support tickets, and saved preferences
 
 ### 🤖 GIZMO AI Assistant
-- **Locally-running LLM** — Llama 3.2 3B (Q4 quantized) via llama-cpp-python. No external API calls.
+- **Dual inference backend** — Llama 3.2 3B (Q4 quantized) via llama-cpp-python locally; **Groq API** in production for fast cloud inference
 - **Product-aware** — RAG (Retrieval-Augmented Generation) injects real product specs from MongoDB into every response
 - **Smart recommendations** — Opinionated suggestions based on actual specs (battery life, chip power, etc.)
 - **Inline comparison** — Generates clickable "Compare" buttons that open the full comparison page
@@ -51,11 +48,11 @@
 │  │ chat_api │ │ auth_api │ │ cart_api │ │ orders_api│  │
 │  └────┬─────┘ └──────────┘ └──────────┘ └───────────┘  │
 │       │                                                  │
-│  ┌────▼──────────────────────────────┐                  │
-│  │   LlamaClient (llama-cpp-python)  │                  │
-│  │   Model: Llama 3.2 3B Q4 (GGUF)  │                  │
-│  │   n_ctx=8192 | temp=0.1 | GPU    │                  │
-│  └───────────────────────────────────┘                  │
+│  ┌────▼────────────────────────────────────────────┐    │
+│  │            LLM Inference Layer                   │    │
+│  │  Dev:  llama-cpp-python (Llama 3.2 3B Q4 GGUF) │    │
+│  │  Prod: Groq API (llama-3.2-3b-preview)          │    │
+│  └─────────────────────────────────────────────────┘    │
 ├─────────────────────────────────────────────────────────┤
 │                MongoDB (Local / Atlas)                   │
 │  ┌──────────┐ ┌───────┐ ┌────────┐ ┌────────────────┐  │
@@ -73,7 +70,8 @@
 | **Frontend** | React 18, Vite 5, React Router 6 | SPA with Apple-inspired UI |
 | **Backend** | Python Flask, Flask-CORS, Flask-JWT-Extended | REST APIs for products, auth, cart, orders, chat |
 | **Database** | MongoDB + PyMongo | Products, users, orders, chat history, tickets |
-| **AI Model** | Llama 3.2 3B (GGUF Q4) via llama-cpp-python | Locally-running LLM for shopping assistant |
+| **AI (Dev)** | Llama 3.2 3B (GGUF Q4) via llama-cpp-python | Locally-running LLM for development |
+| **AI (Prod)** | Llama 3.2 3B via Groq API | Fast cloud inference for live deployment |
 | **Auth** | JWT + Flask-Bcrypt | Secure user authentication |
 | **Styling** | Vanilla CSS, CSS Custom Properties | Apple-inspired design system |
 
@@ -81,16 +79,14 @@
 
 ## 🤖 AI Model Parameters
 
-| Parameter | Value | Reasoning |
-|-----------|-------|-----------|
-| **Model** | `llama-3.2-3b-q4.gguf` | Best balance of speed and quality for local inference |
-| **Context Window** (`n_ctx`) | 8192 tokens | Fits system prompt + product catalog + specs + 4-message history |
-| **Max Output** (`max_tokens`) | 512 tokens | Enough for detailed comparisons without cut-off |
-| **Temperature** | 0.1 | Near-deterministic for accurate, factual product info |
-| **GPU Layers** (`n_gpu_layers`) | -1 (all) | Full GPU offload for maximum speed |
-| **Batch Size** (`n_batch`) | 512 | Faster prompt processing (512 tokens at once) |
-| **Flash Attention** | Enabled | Memory-efficient attention computation |
-| **History Window** | 4 messages | Context awareness for follow-up questions |
+| Parameter | Local (Dev) | Production |
+|-----------|-------------|------------|
+| **Model** | `llama-3.2-3b-q4.gguf` | `llama-3.2-3b-preview` via Groq |
+| **Inference** | llama-cpp-python | Groq API |
+| **Context Window** | 8192 tokens | 8192 tokens |
+| **Max Output** | 512 tokens | 512 tokens |
+| **Temperature** | 0.1 | 0.1 |
+| **GPU Layers** | -1 (full offload) | Managed by Groq |
 
 ### AI Safety & Guardrails
 - **Cross-category comparison blocking** — Hardcoded Python check prevents comparing iPhones with Macs
@@ -112,18 +108,18 @@ Cortex/
 │   │   │   ├── CompareBar/       # Product comparison bar
 │   │   │   ├── Navbar.jsx        # Navigation
 │   │   │   ├── HeroSection.jsx   # Homepage hero
-│   │   │   └── ...               # Product cards, layouts, etc.
+│   │   │   └── ...
 │   │   ├── pages/
-│   │   │   ├── Home.jsx          # Landing page
-│   │   │   ├── Store.jsx         # Product listing
-│   │   │   ├── ProductDetail.jsx # Product detail + buy
-│   │   │   ├── ComparePage.jsx   # Side-by-side comparison
-│   │   │   ├── Cart.jsx          # Shopping cart
-│   │   │   ├── Checkout.jsx      # Checkout flow
-│   │   │   ├── Profile.jsx       # User profile + orders
-│   │   │   └── ...               # Auth pages, support, etc.
-│   │   ├── context/              # React contexts (Auth, Compare)
-│   │   └── App.jsx               # Router + layout
+│   │   │   ├── Home.jsx
+│   │   │   ├── Store.jsx
+│   │   │   ├── ProductDetail.jsx
+│   │   │   ├── ComparePage.jsx
+│   │   │   ├── Cart.jsx
+│   │   │   ├── Checkout.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   └── ...
+│   │   ├── context/
+│   │   └── App.jsx
 │   ├── index.html
 │   ├── vite.config.js
 │   └── package.json
@@ -135,18 +131,18 @@ Cortex/
 │   │   ├── cart_api.py           # Cart CRUD
 │   │   └── orders_api.py         # Order placement + tracking
 │   ├── core/
-│   │   └── llama_client.py       # LlamaClient wrapper (model loading + generation)
+│   │   └── llama_client.py       # LLM client (Groq API in prod / llama-cpp locally)
 │   ├── config/
-│   │   └── settings.py           # App configuration
+│   │   └── settings.py           # App configuration + env vars
 │   ├── data/
 │   │   ├── prompts/
 │   │   │   └── base_prompt.txt   # GIZMO system prompt
-│   │   └── seed_apple_products.py # Full Apple product catalog (seed data)
+│   │   └── seed_apple_products.py
 │   ├── static/                   # Product images
-│   ├── models/                   # GGUF model file (gitignored)
+│   ├── models/                   # GGUF model file (local dev only, gitignored)
 │   └── requirements.txt
 │
-├── imgs/                         # Reference images
+├── imgs/
 ├── .gitignore
 └── README.md
 ```
@@ -156,51 +152,63 @@ Cortex/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- **Python 3.10+**
-- **Node.js 18+**
-- **MongoDB** (local or Atlas)
-- **GPU recommended** (NVIDIA with CUDA for faster inference)
+- Python 3.10+
+- Node.js 18+
+- MongoDB (local or Atlas)
+- Groq API key (for production) — free at [console.groq.com](https://console.groq.com)
+- GPU recommended (for local llama-cpp-python inference only)
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/cortex.git
-cd cortex
+git clone https://github.com/kush-rc/Cortex.git
+cd Cortex
 ```
 
 ### 2. Backend Setup
 ```bash
 cd gizmo
-
-# Create virtual environment
 python -m venv venv
 venv\Scripts\activate        # Windows
 # source venv/bin/activate   # macOS/Linux
-
-# Install dependencies
 pip install -r requirements.txt
-
-# Download the AI model (2GB)
-# Place llama-3.2-3b-q4.gguf in gizmo/models/
 ```
 
-### 3. Seed the Database
+### 3. Set Environment Variables
+Create a `.env` file inside `gizmo/`:
+```env
+# For production (Groq API)
+GROQ_API_KEY=your_groq_api_key_here
+
+# For local dev (llama-cpp-python) — optional
+USE_LOCAL_MODEL=true
+
+# MongoDB
+MONGODB_URI=mongodb://localhost:27017
+MONGODB_DB_NAME=AllItemDetails
+
+# Flask
+FLASK_HOST=0.0.0.0
+FLASK_PORT=5000
+FLASK_DEBUG=True
+```
+
+### 4. Seed the Database
 ```bash
-# Make sure MongoDB is running on localhost:27017
 python data/seed_apple_products.py
 ```
 
-### 4. Start the Backend
+### 5. Start the Backend
 ```bash
 python api/chat_api.py
-# Server runs on http://localhost:5000
+# Runs on http://localhost:5000
 ```
 
-### 5. Frontend Setup
+### 6. Frontend Setup
 ```bash
 cd ../cortex-ui
 npm install
 npm run dev
-# App runs on http://localhost:5173
+# Runs on http://localhost:5173
 ```
 
 ---
@@ -211,9 +219,9 @@ npm run dev
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/products` | Get all products |
-| GET | `/api/products?category=iphone` | Get by category |
-| GET | `/api/products/<id>` | Get product by ID |
-| GET | `/api/products/compare?ids=name1,name2` | Compare products by name |
+| GET | `/api/products?category=iphone` | Filter by category |
+| GET | `/api/products/<id>` | Get by ID |
+| GET | `/api/products/compare?ids=name1,name2` | Compare products |
 
 ### Auth
 | Method | Endpoint | Description |
@@ -245,11 +253,8 @@ npm run dev
 - [ ] Wishlist functionality
 - [ ] Email notifications for orders
 - [ ] Admin dashboard
-- [ ] Multi-language support
 
 ---
 
 ## 📄 Legal & Disclaimer
-**Disclaimer**: Cortex is a mock e-commerce portfolio project created solely for educational purposes. All product names, logos, trademarks, and brands (including Apple, Mac, iPhone, iPad, Apple Watch, AirPods, HomePod, and Apple TV) are property of their respective owners. No actual products are sold, and no real transactions take place.
-
-This project is not affiliated with, endorsed by, or sponsored by Apple Inc. or any other electronics manufacturer.
+Cortex is a mock e-commerce portfolio project for educational purposes only. All product names and brands (Apple, iPhone, Mac, iPad, etc.) are property of their respective owners. No real products are sold and no real transactions occur. Not affiliated with or endorsed by Apple Inc.
